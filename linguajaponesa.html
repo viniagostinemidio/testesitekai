@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaikan da Cidade - Nihongo Gakkō (Escola de Japonês)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos básicos (pode mover para style.css depois) */
+        body { font-family: "Noto Sans JP", sans-serif; line-height: 1.7; color: #333; background-color: #fafafa; }
+        .departamento-container { max-width: 950px; margin: 0 auto; padding: 40px 20px; }
+        .departamento-secao { background-color: #fff; border: 1px solid #e6e6e6; border-radius: 10px; padding: 30px; margin-bottom: 40px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        h1, h2, h3 { color: #2a2a2a; }
+        h2 { border-bottom: 2px solid #b30000; padding-bottom: 10px; margin-top: 0; }
+        h3 { margin-top: 20px; }
+        .menu-departamento { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px; }
+        .menu-departamento a { text-decoration: none; color: #b30000; font-weight: 600; transition: 0.3s; }
+        .menu-departamento a:hover { color: #800000; text-decoration: underline; }
+        .lista-beneficios { list-style: none; padding-left: 0; }
+        .lista-beneficios li { margin-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .vantagens-artigo { margin-top: 25px; }
+        .cta-button { display: inline-block; margin-top: 20px; background-color: #b30000; color: #fff; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .cta-button:hover { background-color: #8b0000; }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho padrão do site -->
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="Imagens/logodokaikan.png" alt="Logo do Kaikan" class="logo">
+        </a>
+
+        <button class="menu-hamburguer" id="menu-hamburguer">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+        </button>
+
+        <nav class="menu-principal" id="menu-principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#departamentos">Departamentos</a></li>
+                <li><a href="#parceiros">Parceiros</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="departamento-container">
+            <h1>Departamento de Nihongo Gakkō – Escola de Japonês</h1>
+            <p>Aprenda a língua e a cultura japonesa com professores experientes, em um ambiente acolhedor e tradicional. O Nihongo Gakkō do Kaikan oferece aulas para crianças, jovens e adultos, em turmas organizadas por nível e objetivo.</p>
+            
+            <img src="Imagens/gakko1.jpg" alt="Alunos na aula de japonês" style="width:100%; border-radius: 10px; margin: 25px 0;">
+
+            <!-- Menu interno de navegação -->
+            <nav class="menu-departamento">
+                <a href="#cursos">Cursos</a>
+                <a href="#horarios">Horários</a>
+                <a href="#vantagens">Vantagens</a>
+                <a href="#inscricoes">Inscrições</a>
+            </nav>
+
+            <!-- Apresentação das turmas -->
+            <section id="cursos" class="departamento-secao">
+                <h2>👩‍🏫 Cursos e Faixas Etárias</h2>
+                <p>O Nihongo Gakkō oferece aulas adaptadas para cada fase da vida. As metodologias e materiais são pensados para tornar o aprendizado acessível, envolvente e eficaz para todos os públicos.</p>
+
+                <article>
+                    <h3>👧 Crianças (Hikaru Youtien / ひかる幼稚園)</h3>
+                    <p>Aprendizado lúdico e interativo, com foco em leitura e escrita básicas (hiragana, katakana e primeiros kanjis). Ideal para filhos de descendentes ou para quem quer introduzir a cultura japonesa desde cedo.</p>
+                </article>
+
+                <article>
+                    <h3>🧑 Jovens e Adultos (Otona no Bu / 大人の部)</h3>
+                    <p>Aulas voltadas para conversação, leitura e escrita, com níveis do básico ao avançado. Perfeito para quem quer viajar, trabalhar ou estudar no Japão.</p>
+                    <ul class="lista-beneficios">
+                        <li>✔️ Gramática prática e contextualizada;</li>
+                        <li>✔️ Vocabulário útil para viagens, trabalho e JLPT;</li>
+                        <li>✔️ Temas culturais: etiqueta, culinária, animes e costumes.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Tabela de horários -->
+            <section id="horarios" class="departamento-secao">
+                <h2>🕒 Horários e Turmas</h2>
+                <p>Escolha o melhor horário para sua rotina. As turmas são pequenas, garantindo atenção individual e aprendizado de qualidade.</p>
+
+                <table>
+                    <tr>
+                        <th>Turma</th>
+                        <th>Dias</th>
+                        <th>Horário</th>
+                        <th>Faixa Etária</th>
+                    </tr>
+                    <tr>
+                        <td>Infantil</td>
+                        <td>Terça Quinta e Sexta</td>
+                        <td>13:30h – 15:30h</td>
+                        <td>5 a 11 anos</td>
+                    </tr>
+                    <tr>
+                        <td>Jovens e Adultos (Diurno)</td>
+                        <td>Terça Quinta e Sexta</td>
+                        <td>13:30h – 15:30h</td>
+                        <td>A partir de 12 anos</td>
+                    </tr>
+                    <tr>
+                        <td>Jovens e Adultos (Noturno)</td>
+                        <td>Turmas em 2026</td>
+                        <td>19:30h – 21h</td>
+                        <td>A partir de 12 anos</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Benefícios e diferenciais -->
+           <!-- <section id="vantagens" class="departamento-secao">
+                <h2>🌸 Por Que Estudar no Kaikan?</h2>
+                <p>Estudar japonês no Kaikan é mais do que aprender uma língua: é viver uma experiência cultural completa.</p>
+
+                <article class="vantagens-artigo">
+                    <h3>✍️ Aprenda a Ler e Escrever em Japonês</h3>
+                    <p>Você aprenderá hiragana (ひらがな), katakana (カタカナ) e kanji (漢字) de forma gradual e prática — conquistando autonomia para ler mangás, livros e placas japonesas.</p>
+                </article>
+
+                <article class="vantagens-artigo">
+                    <h3>🗾 Prepare-se para o Japão</h3>
+                    <p>Ideal para quem sonha em viajar, estudar ou trabalhar no Japão. As aulas incluem diálogos e situações cotidianas para facilitar sua adaptação.</p>
+                </article>
+
+                <article class="vantagens-artigo">
+                    <h3>📚 Acesso à Biblioteca e Cultura Japonesa</h3>
+                    <p>O aluno tem acesso à biblioteca do Kaikan, com livros, mangás e revistas em japonês e português, além de eventos como festivais, oficinas e cerimônias culturais.</p>
+                </article>
+
+                <article class="vantagens-artigo">
+                    <h3>💬 Foco na Conversação</h3>
+                    <p>Durante as aulas, os alunos participam de simulações de diálogos e atividades práticas que estimulam a fluência e a confiança ao falar.</p>
+                </article>
+            </section>!--> 
+
+            <!-- Benefícios e Públicos -->
+
+
+<section id="vantagens" class="departamento-secao">
+    <h2>🌸 Por Que Estudar no Kaikan?</h2>
+    <p>Nosso curso de japonês atrai diferentes perfis de alunos — cada um com um sonho, uma motivação e um motivo especial para aprender. Descubra qual é o seu.</p>
+
+    <div class="vantagens-container">
+
+        <article class="vantagens-artigo">
+            <h3>🎌 Fãs da Cultura Pop</h3>
+            <p>Aprenda japonês para assistir animes sem legenda, entender letras de J-Pop e ler mangás no original. Viva o Japão que você sempre admirou.</p>
+        </article>
+
+        <article class="vantagens-artigo">
+            <h3>🏠 Futuro Residente no Japão</h3>
+            <p>Aprenda o japonês prático do cotidiano: alugar apartamento, abrir conta, ir ao médico e entender a cultura local para viver com confiança no Japão.</p>
+        </article>
+
+        <article class="vantagens-artigo">
+            <h3>🗾 Viajantes e Intercambistas</h3>
+            <p>Prepare-se para sua jornada ao Japão! Nossas aulas ensinam como se comunicar, ler placas, pedir comida e viver o dia a dia com independência.</p>
+        </article>
+
+        <article class="vantagens-artigo">
+            <h3>🌸 Descendentes Nikkei</h3>
+            <p>Reconecte-se com suas raízes, converse com familiares em japonês e compreenda a cultura e os rituais que fazem parte da comunidade japonesa.</p>
+        </article>
+
+        <article class="vantagens-artigo">
+            <h3>💼 Profissionais e Estudantes</h3>
+            <p>Domine o idioma que abre portas! O japonês é um diferencial raro para quem busca bolsas, vagas em empresas japonesas ou certificações como o JLPT.</p>
+        </article>
+
+        <article class="vantagens-artigo">
+            <h3>👧 Crianças e Jovens</h3>
+            <p>Aulas lúdicas e culturais que estimulam o cérebro, a disciplina e o respeito — com músicas, jogos, origami e histórias japonesas.</p>
+        </article>
+
+        <article class="vantagens-artigo">
+            <h3>🥋 Praticantes de Artes Japonesas</h3>
+            <p>Compreenda o idioma por trás das artes que você pratica — como karatê, judô, ikebana ou shodô — e aprofunde sua conexão com a tradição.</p>
+        </article>
+
+        <article class="vantagens-artigo">
+            <h3>📚 Biblioteca e Cultura</h3>
+            <p>Todos os alunos têm acesso à biblioteca do Kaikan — com livros, mangás e revistas — e a eventos culturais como matsuri, oficinas e cerimônias do chá.</p>
+        </article>
+
+    </div>
+</section>
+
+
+            <!-- Seção de inscrições -->
+            <section id="inscricoes" class="departamento-secao">
+                <h2>📩 Inscrições e Contato</h2>
+                <p>As matrículas estão abertas durante todo o ano! Entre em contato e venha fazer parte da nossa comunidade.</p>
+
+                <p><strong>📞 Telefone:</strong> (xx) xxxx-xxxx<br>
+                   <strong>📧 E-mail:</strong> nihongo@[kaikan].org<br>
+                   <strong>📍 Endereço:</strong> [Endereço do Kaikan]</p>
+
+                <a href="#contato" class="cta-button">➡️ Quero me inscrever!</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p style="text-align:center; padding:20px 0;">© 2025 Kaikan da Cidade – Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
