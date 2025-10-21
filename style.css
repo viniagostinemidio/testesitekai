@@ -1,0 +1,529 @@
+/* Reset básico para remover margens e preenchimentos padrão do navegador */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* ======================================= */
+/* ===== ESTILOS DO SLIDER E BANNER  ===== */
+/* ======================================= */
+
+#inicio {
+    /* Altura e posicionamento */
+    height: 70vh; /* Ocupa 70% da altura da tela */
+    position: relative; /* ESSENCIAL: para posicionar os filhos (fundo e texto) dentro dele */
+    display: flex; /* Usamos flex para centralizar o conteúdo de texto */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que nada "vaze" para fora da seção */
+    color: white; 
+}
+
+/* Camada do fundo com as imagens animadas */
+.slider-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Camada de baixo */
+
+    /* Configurações da imagem de fundo inicial */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6); /* Escurece a imagem para o texto aparecer bem */
+
+    /* AQUI ACONTECE A MÁGICA DA ANIMAÇÃO */
+    animation: trocaImagem 36s infinite linear;
+}
+
+/* Camada do conteúdo (texto) */
+.inicio-conteudo {
+    position: relative; /* Posição relativa para garantir que fique por cima */
+    z-index: 2; /* Camada de cima */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo preto semi-transparente para o texto */
+    padding: 30px 50px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    max-width: 80%;
+}
+
+.inicio-conteudo h1 {
+    font-size: 3rem; /* Tamanho do título principal */
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.inicio-conteudo p {
+    font-size: 1.2rem;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ======================================= */
+/* =====  ANIMAÇÃO DAS IMAGENS (KEYFRAMES) ===== */
+/* ======================================= */
+@keyframes trocaImagem {
+    0%   { background-image: url('../Imagens/kaikanheader.png'); }
+    25%  { background-image: url('../Imagens/kaikanheader.png'); } /* Fica nesta imagem por 25% do tempo (9s) */
+    
+    33%  { background-image: url('../Imagens/foto-evento-1.jpg'); } /* Troca para a próxima imagem */
+    58%  { background-image: url('../Imagens/foto-evento-1.jpg'); } /* Fica nesta por 25% do tempo */
+    
+    66%  { background-image: url('../Imagens/foto-evento-2.jpg'); } /* Troca para a próxima imagem */
+    91%  { background-image: url('../Imagens/foto-evento-2.jpg'); } /* Fica nesta por 25% do tempo */
+    
+    100% { background-image: url('../Imagens/kaikanheader.png'); } /* Volta para a primeira para um loop perfeito */
+}
+
+.logo {
+    height: 50px; /* Define uma altura máxima para a imagem do logo */
+}
+
+/* Estilizando a lista do menu */
+nav ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    display: flex; /* Alinha os itens da lista (li) um ao lado do outro */
+    gap: 20px; /* Cria um espaço de 20px entre cada item do menu */
+}
+
+/* Estilizando os links do menu */
+nav a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #333; /* Cor do texto (cinza escuro) */
+    font-size: 16px;
+    font-family: Arial, sans-serif; /* Define uma fonte mais comum */
+    padding: 5px;
+    transition: color 0.3s; /* Adiciona uma transição suave para o efeito hover */
+}
+
+/* Efeito hover: muda a cor do link quando o mouse passa por cima */
+nav a:hover {
+    color: #007bff; /* Uma cor azul para o destaque */
+}
+
+/* CSS ATUALIZADO - SUBSTITUA O ANTIGO #inicio POR ESTE */
+
+/* Estilizando a seção de início (o banner) */
+#inicio {
+    /* Define a imagem de fundo */
+    background-image: url('../Imagens/kaikanheader.png'); /* IMPORTANTE: os ../ voltam uma pasta para achar a pasta Imagens */
+    
+    /* Configurações da imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área sem distorcer */
+    background-position: center; /* Centraliza a imagem */
+
+    /* Define a altura e alinhamento do conteúdo */
+    height: 50vh; /* O banner terá 50% da altura da tela */
+    color: white; /* Cor do texto */
+    
+    /* Centraliza o texto (h1 e p) na vertical e horizontal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra ao texto para melhor leitura */
+}
+
+
+/* Estilo do Bloco Separador */
+.section-divider {
+    background-color: #c00; /* Um tom de vermelho forte, mas elegante */
+    color: white;
+    text-align: center;
+    padding: 15px 0; /* 15px de espaçamento em cima e embaixo */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    letter-spacing: 2px; /* Adiciona um pequeno espaço entre as letras */
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo da Seção de Cursos/Departamentos */
+#cursos {
+    padding: 40px 20px; /* Adiciona um respiro nas laterais e na vertical */
+    background-color: #f9f9f9; /* Um fundo levemente cinza para destacar os cartões */
+}
+
+.cursos-grid {
+    display: grid; /* Ativa o layout de grade */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mágica da responsividade! */
+    gap: 30px; /* Espaço entre os cartões */
+    max-width: 1200px; /* Largura máxima para o grid */
+    margin: 0 auto; /* Centraliza o grid na página */
+}
+
+.curso-card {
+    background-color: white;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #333;
+    overflow: hidden; /* Garante que a imagem não "vaze" dos cantos arredondados */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave para o hover */
+}
+
+.curso-card:hover {
+    transform: translateY(-10px); /* Levanta o cartão um pouco */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Aumenta a sombra para dar profundidade */
+}
+
+.curso-card img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do cartão */
+    display: block; /* Remove qualquer espaço fantasma abaixo da imagem */
+}
+
+.curso-card h3 {
+    margin: 0; /* Remove a margem padrão do h3 */
+    padding: 20px; /* Adiciona um espaçamento interno para o texto */
+    font-family: Arial, sans-serif;
+}
+
+/* ======================================= */
+/* ===== ESTILOS DA SEÇÃO QUEM SOMOS ===== */
+/* ======================================= */
+
+#quem-somos {
+    padding: 60px 20px; /* Espaçamento interno da seção */
+}
+
+.quem-somos-container {
+    display: flex; /* ATIVA O FLEXBOX! Isso cria as colunas. */
+    align-items: center; /* Alinha o conteúdo das colunas verticalmente. */
+    gap: 50px; /* Espaço entre a coluna de texto e a de imagem. */
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o container na página. */
+}
+
+/* Define que cada coluna vai ocupar um espaço igual */
+.quem-somos-texto, .quem-somos-imagem {
+    flex: 1; 
+}
+
+/* Estilos do conteúdo da coluna de texto */
+.quem-somos-logo {
+    max-width: 120px; /* Controla o tamanho do logo */
+    margin-bottom: 15px;
+}
+
+#quem-somos h2 {
+    font-size: 2.5rem; /* Tamanho do título "Quem Somos" */
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#quem-somos p {
+    font-size: 1rem;
+    line-height: 1.6; /* Espaçamento entre as linhas do parágrafo */
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do botão "Saiba Mais" */
+.botao {
+    background-color: #c00; /* Mesmo vermelho do separador */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* Permite aplicar padding corretamente */
+    transition: background-color 0.3s;
+}
+
+.botao:hover {
+    background-color: #a40000; /* Um tom de vermelho mais escuro no hover */
+}
+
+/* Estilo da imagem da coluna da direita */
+.quem-somos-imagem img {
+    width: 100%;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+}
+
+
+/* ======================================= */
+/* =====     RESPONSIVIDADE CELULAR    ===== */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    .quem-somos-container {
+        flex-direction: column; /* Faz as colunas ficarem uma em cima da outra */
+        text-align: center; /* Centraliza o texto no modo coluna */
+    }
+}
+
+
+/* ======================================= */
+/* =====  ESTILOS DA SEÇÃO DE CONTATO  ===== */
+/* ======================================= */
+
+#contato {
+    background-color: #f9f9f9; /* Fundo cinza claro para diferenciar */
+    padding: 60px 20px;
+}
+
+.contato-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas quebrem para a linha de baixo em telas pequenas */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Define que as colunas ocuparão o espaço disponível */
+.contato-info, .contato-mapa {
+    flex: 1;
+    min-width: 300px; /* Largura mínima para cada coluna antes de quebrar */
+}
+
+#contato h2 {
+    font-size: 2.5rem;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.contato-subtitulo {
+    font-family: Arial, sans-serif;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start; /* Alinha o ícone com o topo do texto */
+    margin-bottom: 20px;
+}
+
+.info-item .icone {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #c00; /* Vermelho para os ícones */
+}
+
+.info-item strong {
+    font-family: Arial, sans-serif;
+    display: block;
+}
+
+.info-item p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.info-item a {
+    color: #c00;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.contato-mapa iframe {
+    border-radius: 8px; /* Cantos arredondados para o mapa */
+    min-height: 350px;
+}
+
+/* ======================================= */
+/* =====     MENU HAMBÚRGUER (MOBILE)  ===== */
+/* ======================================= */
+
+/* Por padrão (desktop), o ícone hambúrguer é escondido */
+.menu-hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-hamburguer .barra {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+
+/* Usamos uma Media Query para aplicar estilos SÓ em telas pequenas */
+@media (max-width: 768px) {
+    
+    /* 1. Esconde o menu de texto */
+    .menu-principal nav ul {
+        display: none;
+    }
+
+    /* 2. Mostra o ícone hambúrguer */
+    .menu-hamburguer {
+        display: block; /* Mostra o botão */
+        position: relative; /* Necessário para z-index */
+        z-index: 1001; /* Garante que o botão fique acima de tudo */
+    }
+
+    /* 3. Estiliza o menu que vai abrir */
+    .menu-principal {
+        position: fixed; /* Fica fixo na tela */
+        top: 0;
+        right: -100%; /* Começa escondido fora da tela, à direita */
+        width: 80%;
+        height: 100vh; /* Altura total da tela */
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        transition: right 0.4s ease-in-out; /* Animação de deslizar */
+        z-index: 1000; /* Fica abaixo do botão, mas acima do resto */
+    }
+
+    /* 4. A classe que o JavaScript vai adicionar */
+    .menu-principal.menu-aberto {
+        right: 0; /* Traz o menu para dentro da tela */
+    }
+
+    /* 5. Reorganiza os links para o menu vertical */
+    .menu-principal.menu-aberto nav ul {
+        display: flex;
+        flex-direction: column; /* Links um abaixo do outro */
+        align-items: center; /* Centraliza os links */
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        gap: 30px; /* Espaço entre os links */
+    }
+
+    .menu-principal.menu-aberto nav a {
+        font-size: 1.5rem; /* Aumenta o tamanho da fonte no menu aberto */
+    }
+}
+
+
+/* ======================================= */
+/* ===== ESTILOS DO SLIDER E BANNER  ===== */
+/* ======================================= */
+
+#inicio {
+    /* Altura e posicionamento */
+    height: 70vh; /* Ocupa 70% da altura da tela */
+    position: relative; /* ESSENCIAL: para posicionar os filhos (fundo e texto) dentro dele */
+    display: flex; /* Usamos flex para centralizar o conteúdo de texto */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que nada "vaze" para fora da seção */
+    color: white; 
+}
+
+/* Camada do fundo com as imagens animadas */
+.slider-fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Camada de baixo */
+
+    /* Configurações da imagem de fundo inicial */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6); /* Escurece a imagem para o texto aparecer bem */
+
+    /* AQUI ACONTECE A MÁGICA DA ANIMAÇÃO */
+    animation: trocaImagem 36s infinite linear;
+}
+
+/* Camada do conteúdo (texto) */
+.inicio-conteudo {
+    position: relative; /* Posição relativa para garantir que fique por cima */
+    z-index: 2; /* Camada de cima */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo preto semi-transparente para o texto */
+    padding: 30px 50px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    max-width: 80%;
+}
+
+.inicio-conteudo h1 {
+    font-size: 3rem; /* Tamanho do título principal */
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.inicio-conteudo p {
+    font-size: 1.2rem;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ======================================= */
+/* =====  ANIMAÇÃO DAS IMAGENS (KEYFRAMES) ===== */
+/* ======================================= */
+@keyframes trocaImagem {
+    0%   { background-image: url('../Imagens/kaikanheader.png'); }
+    25%  { background-image: url('../Imagens/kaikanheader.png'); } /* Fica nesta imagem por 25% do tempo (9s) */
+    
+    33%  { background-image: url('../Imagens/judoteste.jpg'); } /* Troca para a próxima imagem */
+    58%  { background-image: url('../Imagens/judoteste.jpg'); } /* Fica nesta por 25% do tempo */
+    
+    66%  { background-image: url('../Imagens/tupaindiansheader.jpg'); } /* Troca para a próxima imagem */
+    91%  { background-image: url('../Imagens/tupaindiansheader.jpg'); } /* Fica nesta por 25% do tempo */
+    
+    100% { background-image: url('../Imagens/kaikanheader.png'); } /* Volta para a primeira para um loop perfeito */
+}
+
+
+
+/* ======================================= */
+/* ===== ESTILOS ADICIONAIS P/ PÁGINAS DE DEPTO. ===== */
+/* ======================================= */
+
+.secao-destaque {
+    background-color: #f8f8f8;
+    border-left: 5px solid #c00; /* Borda vermelha à esquerda para destaque */
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.secao-destaque h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.chamada-acao {
+    background-color: #333; /* Fundo escuro para chamar a atenção */
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 8px;
+}
+
+.chamada-acao h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.chamada-acao p {
+    color: #eee;
+    margin-bottom: 25px;
+}
+
+/* Reutilizando a classe .botao que já temos */
+.chamada-acao .botao {
+    font-size: 1.1rem;
+}
+
+.departamento-imagem-secundaria {
+    display: block;         /* 1. Transforma a imagem em um "bloco" */
+    margin-left: auto;      /* 2. Cria margem automática à esquerda */
+    margin-right: auto;     /* 3. Cria margem automática à direita */
+}
